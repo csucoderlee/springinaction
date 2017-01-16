@@ -28,5 +28,9 @@ public class PoeticJuggler extends Juggler{
     public static void main(String[] args) {
         PoeticJuggler poeticJuggler = (PoeticJuggler) ApplicationContextUtil.getBean("poemduke");
         poeticJuggler.perform();
+
+        PoeticJuggler poeticJuggler1 = (PoeticJuggler) ApplicationContextUtil.getBean("poemduke1");
+        poeticJuggler1.perform();
+
     }
 }

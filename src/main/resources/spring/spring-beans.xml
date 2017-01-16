@@ -15,5 +15,10 @@
         <constructor-arg ref="sonnet29"></constructor-arg>
     </bean>
 
+    <!-- 按需实例化-->
+    <bean id="poemduke1" class="com.springinaction.springidol.PoeticJuggler">
+        <constructor-arg ref="sonnet29"></constructor-arg>
+    </bean>
+
     <bean id="sonnet29" class="com.springinaction.springidol.Sonnet29" />
 </beans>
