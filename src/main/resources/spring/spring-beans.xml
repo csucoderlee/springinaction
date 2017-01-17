@@ -1,24 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- beans 标签可以为上下文所有bean, 设置一个默认的初始化和销毁的方法 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+        default-init-method="turnOnLights" default-destroy-method="turnOffLights">
 
     <!-- start beans declaration here -->
 
+    <!-- ============= start 构造器注入 ============= -->
+
     <bean id="duke" class="com.springinaction.springidol.Juggler">
-        <!-- 构造器注入 -->
         <constructor-arg value="15"></constructor-arg>
     </bean>
 
+    <!-- start 按需实例化 -->
     <bean id="poemduke" class="com.springinaction.springidol.PoeticJuggler">
         <constructor-arg value="15"></constructor-arg>
         <constructor-arg ref="sonnet29"></constructor-arg>
     </bean>
 
-    <!-- 按需实例化-->
     <bean id="poemduke1" class="com.springinaction.springidol.PoeticJuggler">
         <constructor-arg ref="sonnet29"></constructor-arg>
     </bean>
+    <!-- end 按需实例化 -->
 
     <bean id="sonnet29" class="com.springinaction.springidol.Sonnet29" />
+
+    <!--  ======== end 构造器注入 ============ -->
+
+    <!-- 工厂方法创造bean -->
+    <bean id="stage" class="com.springinaction.springidol.Stage" factory-method="getInstance" />
+
+    <!-- bean的作用域 scope: singleton by default  业务场景: 每张票都是不同的实例 再比如上面的舞台只有一个-->
+    <bean id="ticket" class="com.springinaction.springidol.Ticket" scope="prototype"/>
+
+    <!-- bean的初始化和销毁 -->
+    <!-- 另一种方式: 实现 InitializingBean DisposableBean这两个接口-->
+    <bean id="auditorium" class="com.springinaction.springidol.Auditorium" init-method="turnOnLights" destroy-method="turnOffLights" />
+
+    <!-- ======== start 设值注入 ========== -->
+    <bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
+        <property name="song" value="Jingle Bells"/>
+        <property name="instrument" ref="saxophone"/>
+    </bean>
+
+    <bean id="saxophone" class="com.springinaction.springidol.Saxophone"></bean>
+    <!-- ======== end 设值注入 ============= -->
 </beans>
