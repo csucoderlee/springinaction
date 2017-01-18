@@ -11,5 +11,11 @@
         <property name="song" value="ai wo zhonghua"/>
     </bean>
 
-    <bean class="com.springinaction.three.Saxophone"/>
+    <bean id="kenny1" class="com.springinaction.three.InstrumentalistOther">
+        <property name="song" value="ai wo zhonghua"/>
+    </bean>
+
+    <!-- 同一个 Instrument的两个bean-->
+    <bean id="saxophone" class="com.springinaction.three.Saxophone"/>
+    <bean id="guitar" class="com.springinaction.three.Guitar" />
 </beans>

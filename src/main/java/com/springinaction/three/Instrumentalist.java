@@ -3,6 +3,7 @@ package com.springinaction.three;
 import com.springinaction.springidol.*;
 import com.springinaction.springidol.Performer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  * Created by lixiang on 17/1/18.
@@ -19,6 +20,8 @@ public class Instrumentalist implements Performer {
     }
 
     @Autowired
+    @Qualifier("guitar")
+    //@Autowired 注解有趣的地方在于，不仅可以在setter方法上进行注入
     public void setInstrument(com.springinaction.three.Instrument instrument){
         this.instrument = instrument;
     }
