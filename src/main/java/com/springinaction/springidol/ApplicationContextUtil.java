@@ -14,4 +14,8 @@ public class ApplicationContextUtil {
     public static Object getBean(String beanid){
         return applicationContext.getBean(beanid);
     }
+
+    public static Object getBean(String beanid, String xmlname){
+        return new ClassPathXmlApplicationContext(xmlname).getBean(beanid);
+    }
 }
