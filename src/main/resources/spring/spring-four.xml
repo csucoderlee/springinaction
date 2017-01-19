@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- beans 标签可以为上下文所有bean, 设置一个默认的初始化和销毁的方法 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="turnOnLights" default-destroy-method="turnOffLights">
+
+    <!-- start beans declaration here -->
+
+    <bean id="audience" class="com.springinaction.four.Audience"/>
+</beans>
