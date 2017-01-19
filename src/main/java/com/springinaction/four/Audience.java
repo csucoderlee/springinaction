@@ -1,5 +1,7 @@
 package com.springinaction.four;
 
+import com.springinaction.springidol.ApplicationContextUtil;
+
 /**
  * Created by lixiang on 17/1/19.
  */
@@ -19,5 +21,10 @@ public class Audience {
 
     public void demandRefund(){
         System.out.println("we want our money back");
+    }
+
+    public static void main(String[] args) {
+        Instrument instrument = (Instrument) ApplicationContextUtil.getBean("instrument", "spring/spring-four.xml");
+        instrument.perform();
     }
 }
