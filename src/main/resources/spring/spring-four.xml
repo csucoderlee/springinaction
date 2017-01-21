@@ -6,13 +6,13 @@
 
     <!-- start beans declaration here -->
     <bean id="audience" class="com.springinaction.four.Audience" />
-    <bean id="instrument" class="com.springinaction.four.Instrument" />
+    <bean id="qiedian" class="com.springinaction.four.QiedianImpl" />
 
     <aop:config>
         <aop:aspect ref="audience">
-            <aop:before pointcut="execution(* com.springinaction.four.Instrument.perform())" method="takeSeats"/>
-            <aop:after-returning pointcut="execution(* com.springinaction.four.Instrument.perform())" method="applaud"/>
-            <aop:after-throwing pointcut="execution(* com.springinaction.four.Instrument.perform())" method="demandRefund"/>
+            <aop:before pointcut="execution(* com.springinaction.four.Qiedian.qiedian())" method="takeSeats"/>
+            <aop:after-returning pointcut="execution(* com.springinaction.four.Qiedian.qiedian())" method="applaud"/>
+            <aop:after-throwing pointcut="execution(* com.springinaction.four.Qiedian.qiedian())" method="demandRefund"/>
         </aop:aspect>
     </aop:config>
 

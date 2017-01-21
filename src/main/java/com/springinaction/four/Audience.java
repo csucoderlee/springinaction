@@ -24,7 +24,7 @@ public class Audience {
     }
 
     public static void main(String[] args) {
-        Instrument instrument = (Instrument) ApplicationContextUtil.getBean("instrument", "spring/spring-four.xml");
-        instrument.perform();
+        Qiedian qiedianimpl = (Qiedian) ApplicationContextUtil.getBean("qiedian", "spring/spring-four.xml");
+        qiedianimpl.qiedian();
     }
 }
