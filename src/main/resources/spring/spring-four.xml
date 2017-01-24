@@ -10,9 +10,10 @@
 
     <aop:config>
         <aop:aspect ref="audience">
-            <aop:before pointcut="execution(* com.springinaction.four.Qiedian.qiedian())" method="takeSeats"/>
-            <aop:after-returning pointcut="execution(* com.springinaction.four.Qiedian.qiedian())" method="applaud"/>
-            <aop:after-throwing pointcut="execution(* com.springinaction.four.Qiedian.qiedian())" method="demandRefund"/>
+            <aop:pointcut id="performer" expression="execution(* com.springinaction.four.Qiedian.qiedian())"/>
+            <aop:before pointcut-ref="performer" method="takeSeats"/>
+            <aop:after-returning pointcut-ref="performer" method="applaud"/>
+            <aop:after-throwing pointcut-ref="performer" method="demandRefund"/>
         </aop:aspect>
     </aop:config>
 
