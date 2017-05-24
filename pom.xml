@@ -10,6 +10,7 @@
 
   <properties>
     <org.springframework.version>4.2.3.RELEASE</org.springframework.version>
+    <version.mysql>5.1.24</version.mysql>
   </properties>
 
   <dependencies>
@@ -40,11 +41,23 @@
       <version>${org.springframework.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjweaver</artifactId>
       <version>1.8.9</version>
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${version.mysql}</version>
     </dependency>
   </dependencies>
 

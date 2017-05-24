@@ -15,6 +15,11 @@ public class ApplicationContextUtil {
         return applicationContext.getBean(beanid);
     }
 
+    public static Object getBeanByClassType(Class clazz) {
+        //ClassPathXmlApplicationContext.getBean() 可以获取参数类型
+        return applicationContext.getBean(clazz.getClass());
+    }
+
     public static Object getBean(String beanid, String xmlname){
         return new ClassPathXmlApplicationContext(xmlname).getBean(beanid);
     }

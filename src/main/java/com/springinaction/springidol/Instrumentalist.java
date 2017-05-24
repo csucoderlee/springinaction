@@ -26,6 +26,7 @@ public class Instrumentalist implements Performer {
 
     public static void main(String[] args) {
         Instrumentalist instrumentalist = (Instrumentalist) ApplicationContextUtil.getBean("kenny");
+        Instrumentalist instrumentalist1 = (Instrumentalist) ApplicationContextUtil.getBeanByClassType(Instrumentalist.class);
         instrumentalist.perform();
     }
 }
