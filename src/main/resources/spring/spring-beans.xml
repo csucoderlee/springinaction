@@ -3,7 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- 声明了一个叫duke的Juggler类，并且构造器注入了15个豆袋子 -->
     <bean id="duke" class="com.springinaction.ch02.Juggler">
+        <constructor-arg value="15"></constructor-arg>
     </bean>
 
+    <!-- 声明了一首诗 -->
+    <bean id="sonnet29" class="com.springinaction.ch02.Sonnet29"/>
+
+    <bean id="poeticJuggler" class="com.springinaction.ch02.PoeticJuggler">
+        <constructor-arg value="6"/>
+        <constructor-arg ref="sonnet29"/>
+    </bean>
 </beans>
