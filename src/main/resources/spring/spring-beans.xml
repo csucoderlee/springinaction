@@ -24,4 +24,11 @@
     <bean id="ticket2" class="com.springinaction.ch02.Ticket"/>
 
     <bean id="auditorium" class="com.springinaction.ch02.Auditorium" init-method="turnOnLights" destroy-method="turnOffLights"/>
+
+    <bean id="saxophone" class="com.springinaction.ch02.Saxophone"/>
+
+    <bean id="kenny" class="com.springinaction.ch02.Instrumentalist">
+        <property name="song" value="我的秘密"/>
+        <property name="instrument" ref="saxophone"/>
+    </bean>
 </beans>
