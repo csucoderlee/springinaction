@@ -17,4 +17,9 @@
     </bean>
 
     <bean id="stage" class="com.springinaction.ch02.Stage" factory-method="getInstance"/>
+
+    <bean id="ticket" class="com.springinaction.ch02.Ticket" scope="prototype"/>
+
+    <bean id="ticket1" class="com.springinaction.ch02.Ticket"/>
+    <bean id="ticket2" class="com.springinaction.ch02.Ticket"/>
 </beans>
