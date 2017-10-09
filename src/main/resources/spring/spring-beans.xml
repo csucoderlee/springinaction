@@ -31,4 +31,12 @@
         <property name="song" value="我的秘密"/>
         <property name="instrument" ref="saxophone"/>
     </bean>
+
+    <!-- 注入内部bean -->
+    <!--<bean id="kenny" class="com.springinaction.ch02.Instrumentalist">-->
+        <!--<property name="song" value="我的秘密"/>-->
+        <!--<property name="instrument">-->
+            <!--<bean class="com.springinaction.ch02.Saxophone"/>-->
+        <!--</property>-->
+    <!--</bean>-->
 </beans>
