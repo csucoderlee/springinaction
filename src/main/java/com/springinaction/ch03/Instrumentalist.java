@@ -1,5 +1,6 @@
 package com.springinaction.ch03;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -33,6 +34,7 @@ public class Instrumentalist implements Performer{
         return instrument;
     }
 
+    @Autowired
     public void setInstrument(Instrument instrument) {
         this.instrument = instrument;
     }
